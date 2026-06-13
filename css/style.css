@@ -78,3 +78,31 @@
     transform: translateY(0);
   }
 }
+
+
+.feature-item {
+  opacity: 0;
+  transform: translateX(60px);
+}
+
+.feature-item.show {
+  animation: slideFeature 0.7s ease forwards;
+}
+
+@keyframes slideFeature {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Image reveal */
+
+.why-image {
+  transform: scale(1.1);
+  transition: transform 1.5s ease;
+}
+
+.why-image.show {
+  transform: scale(1);
+}

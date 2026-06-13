@@ -70,3 +70,40 @@ const observer = new IntersectionObserver(
 );
 
 cards.forEach((card) => observer.observe(card));
+
+
+
+
+
+
+const features = document.querySelectorAll(".feature-item");
+const whyImage = document.querySelector(".why-image");
+
+const featureObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+
+      if (entry.isIntersecting) {
+
+        if (whyImage) {
+          whyImage.classList.add("show");
+        }
+
+        features.forEach((feature, index) => {
+          setTimeout(() => {
+            feature.classList.add("show");
+          }, index * 180);
+        });
+
+      }
+
+    });
+  },
+  {
+    threshold: 0.3
+  }
+);
+
+if (features.length) {
+  featureObserver.observe(features[0]);
+}
