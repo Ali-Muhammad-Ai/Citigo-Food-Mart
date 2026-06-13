@@ -575,6 +575,7 @@
           <div class="food-card">
             <div class="food-image-wrapper">
               <img
+                loading="lazy"
                 src="https://images.unsplash.com/photo-1582552938357-32b906df40cb"
                 alt="Chips"
                 class="food-image"
@@ -596,6 +597,7 @@
           <div class="food-card">
             <div class="food-image-wrapper">
               <img
+                loading="lazy"
                 src="https://images.unsplash.com/photo-1563805042-7684c019e1cb"
                 alt="Ice Cream"
                 class="food-image"
@@ -617,6 +619,7 @@
           <div class="food-card">
             <div class="food-image-wrapper">
               <img
+                loading="lazy"
                 src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af"
                 alt="Sandwich"
                 class="food-image"
@@ -638,6 +641,7 @@
           <div class="food-card">
             <div class="food-image-wrapper">
               <img
+                loading="lazy"
                 src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd"
                 alt="Burger"
                 class="food-image"
@@ -659,6 +663,7 @@
           <div class="food-card">
             <div class="food-image-wrapper">
               <img
+                loading="lazy"
                 src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085"
                 alt="Coffee"
                 class="food-image"
@@ -679,121 +684,80 @@
       </div>
     </section>
 
-
-
     <!-- ============================= -->
-<!-- Fuel Prices -->
-<!-- ============================= -->
+    <!-- Fuel Prices -->
+    <!-- ============================= -->
 
-<section class="relative overflow-hidden bg-gray-950 py-24">
-  <!-- Background Glow -->
-  <div
-    class="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-600/10 blur-[120px]"
-  ></div>
+    <section class="relative overflow-hidden bg-gray-950 py-24">
+      <!-- Background Glow -->
+      <div
+        class="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-600/10 blur-[120px]"
+      ></div>
 
-  <div class="relative mx-auto max-w-7xl px-6 lg:px-10">
-
-    <!-- Heading -->
-    <div class="text-center">
-      <span
-        class="rounded-full bg-red-500/10 px-4 py-2 text-sm font-semibold text-red-400"
-      >
-        Live Fuel Rates
-      </span>
-
-      <h2
-        class="mt-5 text-4xl font-extrabold text-white lg:text-5xl"
-      >
-        Today's Fuel Prices
-      </h2>
-
-      <p class="mt-4 text-lg text-gray-400">
-        Competitive pricing updated daily for every Citigo station.
-      </p>
-    </div>
-
-    <!-- Price Cards -->
-    <div class="mt-16 grid gap-8 md:grid-cols-3">
-
-      <!-- Regular -->
-      <div class="fuel-price-card">
-        <div class="fuel-icon">
-          ⛽
-        </div>
-
-        <h3 class="mt-5 text-2xl font-bold text-white">
-          Regular
-        </h3>
-
-        <div class="mt-4 text-5xl font-extrabold text-red-400">
-          $
+      <div class="relative mx-auto max-w-7xl px-6 lg:px-10">
+        <!-- Heading -->
+        <div class="text-center">
           <span
-            class="fuel-counter"
-            data-target="3.49"
+            class="rounded-full bg-red-500/10 px-4 py-2 text-sm font-semibold text-red-400"
           >
-            0.00
+            Live Fuel Rates
           </span>
+
+          <h2 class="mt-5 text-4xl font-extrabold text-white lg:text-5xl">
+            Today's Fuel Prices
+          </h2>
+
+          <p class="mt-4 text-lg text-gray-400">
+            Competitive pricing updated daily for every Citigo station.
+          </p>
         </div>
 
-        <p class="mt-4 text-sm text-gray-400">
-          Last Updated: Today
-        </p>
+        <!-- Price Cards -->
+        <div class="mt-16 grid gap-8 md:grid-cols-3">
+          <!-- Regular -->
+          <div class="fuel-price-card">
+            <div class="fuel-icon">⛽</div>
+
+            <h3 class="mt-5 text-2xl font-bold text-white">Regular</h3>
+
+            <div class="mt-4 text-5xl font-extrabold text-red-400">
+              $
+              <span class="fuel-counter" data-target="3.49"> 0.00 </span>
+            </div>
+
+            <p class="mt-4 text-sm text-gray-400">Last Updated: Today</p>
+          </div>
+
+          <!-- Premium -->
+          <div class="fuel-price-card">
+            <div class="fuel-icon">🚗</div>
+
+            <h3 class="mt-5 text-2xl font-bold text-white">Premium</h3>
+
+            <div class="mt-4 text-5xl font-extrabold text-red-400">
+              $
+              <span class="fuel-counter" data-target="3.89"> 0.00 </span>
+            </div>
+
+            <p class="mt-4 text-sm text-gray-400">Last Updated: Today</p>
+          </div>
+
+          <!-- Diesel -->
+          <div class="fuel-price-card">
+            <div class="fuel-icon">🚚</div>
+
+            <h3 class="mt-5 text-2xl font-bold text-white">Diesel</h3>
+
+            <div class="mt-4 text-5xl font-extrabold text-red-400">
+              $
+              <span class="fuel-counter" data-target="3.69"> 0.00 </span>
+            </div>
+
+            <p class="mt-4 text-sm text-gray-400">Last Updated: Today</p>
+          </div>
+        </div>
       </div>
-
-      <!-- Premium -->
-      <div class="fuel-price-card">
-        <div class="fuel-icon">
-          🚗
-        </div>
-
-        <h3 class="mt-5 text-2xl font-bold text-white">
-          Premium
-        </h3>
-
-        <div class="mt-4 text-5xl font-extrabold text-red-400">
-          $
-          <span
-            class="fuel-counter"
-            data-target="3.89"
-          >
-            0.00
-          </span>
-        </div>
-
-        <p class="mt-4 text-sm text-gray-400">
-          Last Updated: Today
-        </p>
-      </div>
-
-      <!-- Diesel -->
-      <div class="fuel-price-card">
-        <div class="fuel-icon">
-          🚚
-        </div>
-
-        <h3 class="mt-5 text-2xl font-bold text-white">
-          Diesel
-        </h3>
-
-        <div class="mt-4 text-5xl font-extrabold text-red-400">
-          $
-          <span
-            class="fuel-counter"
-            data-target="3.69"
-          >
-            0.00
-          </span>
-        </div>
-
-        <p class="mt-4 text-sm text-gray-400">
-          Last Updated: Today
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
+    </section>
 
     <script src="js/script.js"></script>
   </body>
