@@ -1,0 +1,294 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- ============= Pre loader ============= -->
+    <!-- Loader -->
+    <div
+      id="loader"
+      class="fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-all duration-700"
+    >
+      <div class="relative flex items-center justify-center">
+        <span
+          class="absolute h-24 w-24 rounded-full border-2 border-red-500 ripple ripple-1"
+        ></span>
+        <span
+          class="absolute h-24 w-24 rounded-full border-2 border-red-500 ripple ripple-2"
+        ></span>
+
+        <img
+          src="media/logo.png"
+          alt="Logo"
+          class="h-24 w-24 object-contain animate-logo"
+        />
+      </div>
+    </div>
+
+    <style>
+      /* Logo Animation */
+      .animate-logo {
+        animation: logoCycle 2.5s ease-in-out infinite;
+        transform-origin: center;
+      }
+
+      @keyframes logoCycle {
+        0% {
+          transform: rotate(0deg) scale(1);
+        }
+
+        40% {
+          transform: rotate(360deg) scale(1.12);
+        }
+
+        55% {
+          transform: rotate(360deg) scale(1);
+        }
+
+        100% {
+          transform: rotate(360deg) scale(1);
+        }
+      }
+
+      /* Ripples */
+      .ripple {
+        opacity: 0;
+      }
+
+      .ripple-1 {
+        animation: ripple 2.5s ease-out infinite;
+        animation-delay: 1.3s;
+      }
+
+      .ripple-2 {
+        animation: ripple 2.5s ease-out infinite;
+        animation-delay: 1.55s;
+      }
+
+      @keyframes ripple {
+        0% {
+          transform: scale(1);
+          opacity: 0;
+        }
+
+        15% {
+          opacity: 0.4;
+        }
+
+        100% {
+          transform: scale(2.2);
+          opacity: 0;
+        }
+      }
+    </style>
+
+    <!-- ============= Navbar ============= -->
+    <nav class="border-b border-gray-200 bg-white px-5">
+      <div
+        class="mx-auto flex h-20 items-center justify-between px-6 "
+      >
+        <!-- Logo -->
+        <a href="#">
+          <div class="flex items-center gap-3">
+            <div
+              class="flex h-11 w-11 items-center justify-center rounded-xl bg-red-600 text-xl"
+            >
+              <img src="media/logo.png" alt="" />
+            </div>
+            <div>
+              <h1 class="text-lg font-bold text-gray-900">Citigo</h1>
+              <p class="text-xs text-gray-500">Food • Fuel • Convenience</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Navigation -->
+        <div class="hidden items-center gap-8 lg:flex">
+          <a
+            href="#"
+            class="font-medium text-gray-600 transition hover:text-red-600"
+          >
+            Home
+          </a>
+          <a
+            href="#"
+            class="font-medium text-gray-600 transition hover:text-red-600"
+          >
+            Food Mart
+          </a>
+          <a
+            href="#"
+            class="font-medium text-gray-600 transition hover:text-red-600"
+          >
+            Fuel Prices
+          </a>
+          <a
+            href="#"
+            class="font-medium text-gray-600 transition hover:text-red-600"
+          >
+            Locations
+          </a>
+          <a
+            href="#"
+            class="font-medium text-gray-600 transition hover:text-red-600"
+          >
+            Rewards
+          </a>
+        </div>
+
+        <!-- Actions -->
+        <div class="hidden items-center gap-3 lg:flex">
+          <button
+            class="rounded-xl border border-gray-300 px-4 py-2 font-medium text-gray-700 transition hover:bg-gray-100"
+          >
+            Find Station
+          </button>
+
+          <a
+            href="#"
+            class="rounded-xl bg-red-600 px-5 py-2 font-semibold text-white transition hover:bg-red-700"
+          >
+            Order Food
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="rounded-lg p-2 text-gray-700 lg:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ============= Hero Header ============= -->
+    <section class="bg-white">
+      <div class="mx-auto px-6 py-20 lg:px-10">
+        <div class="grid items-center gap-16 lg:grid-cols-2">
+          <!-- Content -->
+          <div>
+            <span
+              class="inline-flex items-center rounded-full bg-red-50 px-4 py-2 text-sm font-medium text-red-600"
+            >
+              ⛽ Fresh Food • Quality Fuel • Open 24/7
+            </span>
+
+            <h1
+              class="mt-6 text-5xl font-extrabold tracking-tight text-gray-900 lg:text-6xl"
+            >
+              Fuel Up.
+              <span class="text-red-600">Grab a Bite.</span>
+              Get Back on the Road.
+            </h1>
+
+            <p class="mt-6 max-w-xl text-lg leading-8 text-gray-600">
+              Stop by for premium fuel, freshly prepared food, hot coffee, cold
+              drinks, and everyday essentials—all in one convenient place.
+            </p>
+
+            <!-- CTA -->
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a
+                href="#"
+                class="rounded-xl bg-red-600 px-6 py-3 font-semibold text-white transition hover:bg-red-700"
+              >
+                Find a Station
+              </a>
+
+              <a
+                href="#"
+                class="rounded-xl border border-gray-300 px-6 py-3 font-semibold text-gray-700 transition hover:bg-gray-100"
+              >
+                View Menu
+              </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="mt-12 flex flex-wrap gap-8">
+              <div>
+                <h3 class="text-2xl font-bold text-gray-900">120+</h3>
+                <p class="text-sm text-gray-500">Locations</p>
+              </div>
+
+              <div>
+                <h3 class="text-2xl font-bold text-gray-900">24/7</h3>
+                <p class="text-sm text-gray-500">Open Daily</p>
+              </div>
+
+              <div>
+                <h3 class="text-2xl font-bold text-gray-900">50K+</h3>
+                <p class="text-sm text-gray-500">Customers Served</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual -->
+          <div class="relative">
+            <!-- Main Image -->
+            <div class="overflow-hidden rounded-3xl shadow-2xl">
+              <img
+                src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHyhQ38Ba_X6ookVMs7CPwWopkgwDy0X8Rh4qq3hV8JbJxChgTOfVycp5oYAA13FMe-TGJOB-j1Sa1vxUvYsltGeo371gf8UrrRw6YaZ0MhXAU74u9zzepEhWgIxJasuut8Ld8IPRwcsJSE=s1360-w1360-h1020-rw"
+                alt="Fresh food"
+                class="h-[600px] w-full object-cover"
+              />
+            </div>
+
+            <!-- Fuel Price Card -->
+            <div
+              class="absolute -left-6 top-10 rounded-2xl bg-white p-5 shadow-xl"
+            >
+              <p class="mb-2 text-sm font-medium text-gray-500">
+                Today's Fuel Prices
+              </p>
+
+              <div class="space-y-2">
+                <div class="flex justify-between gap-8">
+                  <span class="font-medium">Regular</span>
+                  <span class="font-bold text-red-600">$3.49</span>
+                </div>
+
+                <div class="flex justify-between gap-8">
+                  <span class="font-medium">Premium</span>
+                  <span class="font-bold text-red-600">$3.89</span>
+                </div>
+
+                <div class="flex justify-between gap-8">
+                  <span class="font-medium">Diesel</span>
+                  <span class="font-bold text-red-600">$3.69</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Food Card -->
+            <div
+              class="absolute -bottom-6 -right-6 rounded-2xl bg-gray-900 p-5 text-white shadow-xl"
+            >
+              <p class="text-sm text-gray-300">Popular Today</p>
+              <h4 class="mt-1 text-xl font-bold">Fresh Burgers & Coffee</h4>
+              <p class="mt-2 text-sm text-gray-400">Made fresh every day.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
