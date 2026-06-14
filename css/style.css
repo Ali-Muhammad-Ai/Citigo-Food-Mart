@@ -61,7 +61,6 @@
   }
 }
 
-
 /* ========== Service Card =========== */
 .service-card {
   opacity: 0;
@@ -78,7 +77,6 @@
     transform: translateY(0);
   }
 }
-
 
 .feature-item {
   opacity: 0;
@@ -107,27 +105,24 @@
   transform: scale(1);
 }
 
-
-
-
 /* ============================= */
 /* Food Cards */
 /* ============================= */
 
 .food-card {
   background: #111827;
-  border: 1px solid rgba(255,255,255,.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
   overflow: hidden;
 
   opacity: 0;
   transform: translateY(50px);
 
-  transition: all .4s ease;
+  transition: all 0.4s ease;
 }
 
 .food-card.show {
-  animation: foodReveal .8s ease forwards;
+  animation: foodReveal 0.8s ease forwards;
 }
 
 @keyframes foodReveal {
@@ -143,8 +138,7 @@
 
 .food-card:hover {
   transform: translateY(-10px);
-  box-shadow:
-    0 25px 50px rgba(0,0,0,.4);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
 }
 
 .food-image-wrapper {
@@ -157,14 +151,12 @@
   height: 100%;
   object-fit: cover;
 
-  transition:
-    transform .7s ease;
+  transition: transform 0.7s ease;
 }
 
 .food-card:hover .food-image {
   transform: scale(1.12);
 }
-
 
 /* ============================= */
 /* Fuel Price Cards */
@@ -180,22 +172,21 @@
 
   border-radius: 24px;
 
-  background: rgba(255,255,255,0.04);
+  background: rgba(255, 255, 255, 0.04);
 
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
   backdrop-filter: blur(10px);
 
-  transition: all .4s ease;
+  transition: all 0.4s ease;
 }
 
 .fuel-price-card:hover {
   transform: translateY(-10px);
 
-  border-color: rgba(239,68,68,.5);
+  border-color: rgba(239, 68, 68, 0.5);
 
-  box-shadow:
-    0 20px 50px rgba(239,68,68,.15);
+  box-shadow: 0 20px 50px rgba(239, 68, 68, 0.15);
 }
 
 /* Icon */
@@ -212,7 +203,7 @@
 
   border-radius: 20px;
 
-  background: rgba(239,68,68,.12);
+  background: rgba(239, 68, 68, 0.12);
 
   font-size: 2rem;
 
@@ -222,11 +213,61 @@
 /* Pulse */
 
 @keyframes pulseIcon {
-  0%,100% {
+  0%,
+  100% {
     transform: scale(1);
   }
 
   50% {
     transform: scale(1.08);
   }
+}
+
+/* ============== Location Section =========== */
+@keyframes pinPop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  70% {
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-pin {
+  animation: pinPop 0.8s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.9s ease forwards;
+}
+
+/* =========== Testimonial =========== */
+.testimonial-card {
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+/* Your scaling logic for the active card */
+.testimonial-card.active {
+  transform: scale(1.03);
 }
