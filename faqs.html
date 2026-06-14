@@ -14,7 +14,102 @@
     />
   </head>
   <body>
-    <section class="bg-gray-50 py-24">
+    <!-- ============= Pre loader ============= -->
+    <div
+      id="loader"
+      class="fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-all duration-700"
+    >
+      <div class="relative flex items-center justify-center">
+        <span
+          class="absolute h-24 w-24 rounded-full border-2 border-red-500 ripple ripple-1"
+        ></span>
+        <span
+          class="absolute h-24 w-24 rounded-full border-2 border-red-500 ripple ripple-2"
+        ></span>
+
+        <img
+          src="media/logo.png"
+          alt="Logo"
+          class="h-24 w-24 object-contain animate-logo"
+        />
+      </div>
+    </div>
+    <!-- ============= Navbar ============= -->
+    <nav class="border-b border-gray-200 bg-white px-5">
+      <div class="mx-auto flex h-20 items-center justify-between px-6">
+        <!-- Logo -->
+        <a href="index.html">
+          <div class="flex items-center gap-3">
+            <div
+              class="flex h-11 w-11 items-center justify-center rounded-xl bg-red-600"
+            >
+              <img src="media/logo.png" alt="" />
+            </div>
+            <div>
+              <h1 class="text-lg font-bold text-gray-900">Citigo</h1>
+              <p class="text-xs text-gray-500">Food • Fuel • Convenience</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden items-center gap-8 lg:flex">
+          <a href="index.html" class="font-medium text-gray-600 hover:text-red-600"
+            >Home</a
+          >
+          <a href="#" class="font-medium text-gray-600 hover:text-red-600"
+            >Food Mart</a
+          >
+          <a href="#" class="font-medium text-gray-600 hover:text-red-600"
+            >Fuel Prices</a
+          >
+          <a href="#" class="font-medium text-gray-600 hover:text-red-600"
+            >Locations</a
+          >
+          <a
+            href="faqs.html"
+            class="font-medium text-gray-600 hover:text-red-600"
+            >FAQs</a
+          >
+        </div>
+
+        <!-- Desktop Actions -->
+        <div class="hidden items-center gap-3 lg:flex">
+          <a
+            href="#"
+            class="rounded-xl bg-red-600 px-5 py-2 font-semibold text-white hover:bg-red-700"
+          >
+            Contact Us
+          </a>
+        </div>
+
+        <!-- Mobile Button -->
+        <button id="menu-btn" class="rounded-lg p-2 text-gray-700 lg:hidden">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden border-t border-gray-200 py-4 lg:hidden"
+      >
+        <div class="flex flex-col gap-4">
+          <a href="index.html" class="text-gray-700">Home</a>
+          <a href="#" class="text-gray-700">Food Mart</a>
+          <a href="#" class="text-gray-700">Fuel Prices</a>
+          <a href="#" class="text-gray-700">Locations</a>
+          <a href="#" class="text-gray-700">Rewards</a>
+          <a
+            href="#"
+            class="rounded-xl bg-red-600 px-4 py-2 text-center font-semibold text-white"
+          >
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </nav>
+    <section class="bg-gray-50 pt-10 pb-24">
       <div class="mx-auto max-w-4xl px-6">
         <!-- Header -->
         <div class="text-center">
@@ -482,32 +577,6 @@
       </div>
     </section>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const faqButtons = document.querySelectorAll(".faq-btn");
-
-        faqButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            const content = button.nextElementSibling;
-            const icon = button.querySelector(".faq-icon");
-
-            const isOpen = content.style.maxHeight;
-
-            document.querySelectorAll(".faq-content").forEach((item) => {
-              item.style.maxHeight = null;
-            });
-
-            document.querySelectorAll(".faq-icon").forEach((item) => {
-              item.textContent = "+";
-            });
-
-            if (!isOpen) {
-              content.style.maxHeight = content.scrollHeight + "px";
-              icon.textContent = "−";
-            }
-          });
-        });
-      });
-    </script>
+    <script src="js/script.js"></script>
   </body>
 </html>

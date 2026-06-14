@@ -36,63 +36,6 @@
       </div>
     </div>
 
-    <style>
-      /* Logo Animation */
-      .animate-logo {
-        animation: logoCycle 2.5s ease-in-out infinite;
-        transform-origin: center;
-      }
-
-      @keyframes logoCycle {
-        0% {
-          transform: rotate(0deg) scale(1);
-        }
-
-        40% {
-          transform: rotate(360deg) scale(1.12);
-        }
-
-        55% {
-          transform: rotate(360deg) scale(1);
-        }
-
-        100% {
-          transform: rotate(360deg) scale(1);
-        }
-      }
-
-      /* Ripples */
-      .ripple {
-        opacity: 0;
-      }
-
-      .ripple-1 {
-        animation: ripple 2.5s ease-out infinite;
-        animation-delay: 1.3s;
-      }
-
-      .ripple-2 {
-        animation: ripple 2.5s ease-out infinite;
-        animation-delay: 1.55s;
-      }
-
-      @keyframes ripple {
-        0% {
-          transform: scale(1);
-          opacity: 0;
-        }
-
-        15% {
-          opacity: 0.4;
-        }
-
-        100% {
-          transform: scale(2.2);
-          opacity: 0;
-        }
-      }
-    </style>
-
     <!-- ============= Navbar ============= -->
     <nav class="border-b border-gray-200 bg-white px-5">
       <div class="mx-auto flex h-20 items-center justify-between px-6">
@@ -113,7 +56,7 @@
 
         <!-- Desktop Nav -->
         <div class="hidden items-center gap-8 lg:flex">
-          <a href="#" class="font-medium text-gray-600 hover:text-red-600"
+          <a href="index.html" class="font-medium text-gray-600 hover:text-red-600"
             >Home</a
           >
           <a href="#" class="font-medium text-gray-600 hover:text-red-600"
@@ -125,24 +68,20 @@
           <a href="#" class="font-medium text-gray-600 hover:text-red-600"
             >Locations</a
           >
-          <a href="#" class="font-medium text-gray-600 hover:text-red-600"
-            >Rewards</a
+          <a
+            href="faqs.html"
+            class="font-medium text-gray-600 hover:text-red-600"
+            >FAQs</a
           >
         </div>
 
         <!-- Desktop Actions -->
         <div class="hidden items-center gap-3 lg:flex">
-          <button
-            class="rounded-xl border border-gray-300 px-4 py-2 font-medium text-gray-700 hover:bg-gray-100"
-          >
-            Find Station
-          </button>
-
           <a
             href="#"
             class="rounded-xl bg-red-600 px-5 py-2 font-semibold text-white hover:bg-red-700"
           >
-            Order Food
+            Contact Us
           </a>
         </div>
 
@@ -158,23 +97,16 @@
         class="hidden border-t border-gray-200 py-4 lg:hidden"
       >
         <div class="flex flex-col gap-4">
-          <a href="#" class="text-gray-700">Home</a>
+          <a href="index.html" class="text-gray-700">Home</a>
           <a href="#" class="text-gray-700">Food Mart</a>
           <a href="#" class="text-gray-700">Fuel Prices</a>
           <a href="#" class="text-gray-700">Locations</a>
           <a href="#" class="text-gray-700">Rewards</a>
-
-          <button
-            class="rounded-xl border border-gray-300 px-4 py-2 text-gray-700"
-          >
-            Find Station
-          </button>
-
           <a
             href="#"
             class="rounded-xl bg-red-600 px-4 py-2 text-center font-semibold text-white"
           >
-            Order Food
+            Contact Us
           </a>
         </div>
       </div>
@@ -308,7 +240,7 @@
 
 
     <!-- ============= Counnter =============== -->
-     <section class="bg-gray-900 py-20 sm:py-28 relative overflow-hidden">
+     <section class="bg-gray-900 py-10 sm:py-10 relative overflow-hidden">
   <div class="absolute top-0 left-1/4 w-96 h-96 bg-red-900/20 rounded-full blur-3xl pointer-events-none"></div>
   <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-red-900/10 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -683,142 +615,10 @@
         </div>
       </div>
     </section>
-
-    <!-- ============= Location Section ============ -->
-    <section class="bg-gray-50 py-24">
-      <div class="mx-auto px-6">
-        <!-- Header -->
-        <div class="text-center">
-          <span
-            class="rounded-full bg-red-100 px-4 py-2 text-sm font-semibold text-red-600"
-          >
-            Visit Us
-          </span>
-
-          <h2
-            class="mt-5 text-4xl font-bold tracking-tight text-gray-900 md:text-5xl"
-          >
-            Find a Citigo Near You
-          </h2>
-
-          <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
-            Stop by for fuel, snacks, hot food, drinks, and everyday essentials.
-          </p>
-        </div>
-
-
-            <svg
-              class="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
-          </div>
-        </div>
-
-        <!-- Content -->
-        <div class="mt-12 grid gap-8 lg:grid-cols-2">
-          <!-- Map -->
-          <div
-            class="relative overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-lg"
-          >
-            <iframe
-              src="https://www.google.com/maps?q=3661+Austell+Rd+SW,+Marietta,+GA+30008&output=embed"
-              class="h-[500px] w-full"
-              loading="lazy"
-            ></iframe>
-
-            <!-- Animated Pin -->
-            <div
-              class="pointer-events-none absolute left-1/2 top-1/2 animate-pin -translate-x-1/2 -translate-y-1/2"
-            >
-              <!-- <div
-                class="flex h-14 w-14 items-center justify-center rounded-full bg-red-600 text-2xl text-white shadow-2xl"
-              >
-                📍
-              </div> -->
-            </div>
-          </div>
-
-          <!-- Store Card -->
-          <div
-            class="animate-slide-up flex flex-col justify-center rounded-3xl border border-gray-200 bg-white p-8 shadow-lg"
-          >
-            <span
-              class="mb-4 w-fit rounded-full bg-green-100 px-3 py-1 text-sm font-semibold text-green-700"
-            >
-              Open Daily
-            </span>
-
-            <h3 class="text-3xl font-bold text-gray-900">Citigo Food Mart</h3>
-
-            <div class="mt-8 space-y-6">
-              <div>
-                <p
-                  class="text-sm font-semibold uppercase tracking-wide text-red-600"
-                >
-                  Address
-                </p>
-
-                <p class="mt-2 text-lg text-gray-700">
-                  <a href="https://maps.app.goo.gl/hi5rvdp1RRZjgjKk9" class="text-lg text-gray-700 hover:text-red-600">
-                    3661 Austell Rd SW<br />
-                    Marietta, GA 30008<br />
-                    United States
-                  </a>
-                </p>
-              </div>
-
-              <div>
-                <p
-                  class="text-sm font-semibold uppercase tracking-wide text-red-600"
-                >
-                  Phone
-                </p>
-
-                <a
-                  href="tel:+17703334525"
-                  class="mt-2 block text-lg text-gray-700 hover:text-red-600"
-                >
-                  +1 770-333-4525
-                </a>
-              </div>
-
-              <div>
-                <p
-                  class="text-sm font-semibold uppercase tracking-wide text-red-600"
-                >
-                  Hours
-                </p>
-
-                <div class="mt-2 space-y-1 text-gray-700">
-                  <p>Monday – Saturday: Open</p>
-                  <p>Sunday: Open during the day</p>
-                  <p class="font-medium text-red-600">Sunday Night: Closed</p>
-                </div>
-              </div>
-            </div>
-
-            <a
-              href="https://maps.app.goo.gl/hi5rvdp1RRZjgjKk9"
-              target="_blank"
-              class="mt-8 inline-flex w-fit items-center rounded-xl bg-red-600 px-6 py-3 font-semibold text-white transition hover:bg-red-700"
-            >
-              Get Directions
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+    
+    
     <!-- ============= Testimonial ============ -->
-<section class="bg-white py-24 overflow-hidden">
+<section id="testimonial" class="bg-white py-24 overflow-hidden">
   <div class="mx-auto px-6">
     <div class="text-center">
       <span class="rounded-full bg-red-100 px-4 py-2 text-sm font-semibold text-red-600">
@@ -961,9 +761,268 @@
   </div>
 </section>
 
-<style>
-  
-</style>
+
+<!-- ============= Location Section ============ -->
+    <section class="bg-gray-50 py-24">
+      <div class="mx-auto px-6">
+        <!-- Header -->
+        <div class="text-center">
+          <span
+            class="rounded-full bg-red-100 px-4 py-2 text-sm font-semibold text-red-600"
+          >
+            Visit Us
+          </span>
+
+          <h2
+            class="mt-5 text-4xl font-bold tracking-tight text-gray-900 md:text-5xl"
+          >
+            Find a Citigo Near You
+          </h2>
+
+          <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
+            Stop by for fuel, snacks, hot food, drinks, and everyday essentials.
+          </p>
+        </div>
+
+
+            <svg
+              class="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="mt-12 grid gap-8 lg:grid-cols-2">
+          <!-- Map -->
+          <div
+            class="relative overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-lg"
+          >
+            <iframe
+              src="https://www.google.com/maps?q=3661+Austell+Rd+SW,+Marietta,+GA+30008&output=embed"
+              class="h-[500px] w-full"
+              loading="lazy"
+            ></iframe>
+
+            <!-- Animated Pin -->
+            <div
+              class="pointer-events-none absolute left-1/2 top-1/2 animate-pin -translate-x-1/2 -translate-y-1/2"
+            >
+              <!-- <div
+                class="flex h-14 w-14 items-center justify-center rounded-full bg-red-600 text-2xl text-white shadow-2xl"
+              >
+                📍
+              </div> -->
+            </div>
+          </div>
+
+          <!-- Store Card -->
+          <div
+            class="animate-slide-up flex flex-col justify-center rounded-3xl border border-gray-200 bg-white p-8 shadow-lg"
+          >
+            <span
+              class="mb-4 w-fit rounded-full bg-green-100 px-3 py-1 text-sm font-semibold text-green-700"
+            >
+              Open Daily
+            </span>
+
+            <h3 class="text-3xl font-bold text-gray-900">Citigo Food Mart</h3>
+
+            <div class="mt-8 space-y-6">
+              <div>
+                <p
+                  class="text-sm font-semibold uppercase tracking-wide text-red-600"
+                >
+                  Address
+                </p>
+
+                <p class="mt-2 text-lg text-gray-700">
+                  <a href="https://maps.app.goo.gl/hi5rvdp1RRZjgjKk9" class="text-lg text-gray-700 hover:text-red-600">
+                    3661 Austell Rd SW<br />
+                    Marietta, GA 30008<br />
+                    United States
+                  </a>
+                </p>
+              </div>
+
+              <div>
+                <p
+                  class="text-sm font-semibold uppercase tracking-wide text-red-600"
+                >
+                  Phone
+                </p>
+
+                <a
+                  href="tel:+17703334525"
+                  class="mt-2 block text-lg text-gray-700 hover:text-red-600"
+                >
+                  +1 770-333-4525
+                </a>
+              </div>
+
+              <div>
+                <p
+                  class="text-sm font-semibold uppercase tracking-wide text-red-600"
+                >
+                  Hours
+                </p>
+
+                <div class="mt-2 space-y-1 text-gray-700">
+                  <p>Monday – Saturday: Open</p>
+                  <p>Sunday: Open during the day</p>
+                  <p class="font-medium text-red-600">Sunday Night: Closed</p>
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="https://maps.app.goo.gl/hi5rvdp1RRZjgjKk9"
+              target="_blank"
+              class="mt-8 inline-flex w-fit items-center rounded-xl bg-red-600 px-6 py-3 font-semibold text-white transition hover:bg-red-700"
+            >
+              Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<footer class="bg-gray-950 text-white">
+  <!-- Main Footer -->
+  <div class="mx-auto px-6 py-16">
+    <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-3">
+          <div
+            class="rotating-footer-logo flex h-12 w-12 items-center justify-center rounded-xl"
+          >
+            <img src="media/citigo-logo.png" alt="Citigo Logo" class="h-12 w-12" />
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold">Citigo</h3>
+            <p class="text-sm text-gray-400">
+              Food • Fuel • Convenience
+            </p>
+          </div>
+        </div>
+
+        <p class="mt-5 text-gray-400">
+          Your neighborhood stop for fuel, snacks, drinks, and everyday
+          essentials. Conveniently located in Marietta, Georgia.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="mb-5 text-lg font-semibold">Quick Links</h4>
+
+        <ul class="space-y-3 text-gray-400">
+          <li>
+            <a href="#home" class="transition hover:text-red-500">Home</a>
+          </li>
+          <li>
+            <a href="#about" class="transition hover:text-red-500">About</a>
+          </li>
+          <li>
+            <a href="#services" class="transition hover:text-red-500">
+              Services
+            </a>
+          </li>
+          <li>
+            <a href="#testimonial" class="transition hover:text-red-500">
+              Reviews
+            </a>
+          </li>
+          <li>
+            <a href="#faq" class="transition hover:text-red-500">FAQ</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="mb-5 text-lg font-semibold">Contact Us</h4>
+
+        <div class="space-y-4 text-gray-400">
+          <div>
+            <p class="font-medium text-white">Address</p>
+            <p>
+              3661 Austell Rd SW<br />
+              Marietta, GA 30008<br />
+              United States
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium text-white">Phone</p>
+            <a
+              href="tel:+17703334525"
+              class="transition hover:text-red-500"
+            >
+              +1 (770) 333-4525
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hours -->
+      <div>
+        <h4 class="mb-5 text-lg font-semibold">Store Hours</h4>
+
+        <div class="space-y-3 text-gray-400">
+          <div class="flex justify-between gap-4">
+            <span>Monday - Saturday</span>
+            <span class="text-green-400">Open</span>
+          </div>
+
+          <div class="flex justify-between gap-4">
+            <span>Sunday</span>
+            <span class="text-yellow-400">Open (Daytime)</span>
+          </div>
+
+          <div class="flex justify-between gap-4">
+            <span>Sunday Night</span>
+            <span class="text-red-400">Closed</span>
+          </div>
+        </div>
+
+        <a
+          href="https://maps.google.com/?q=3661+Austell+Rd+SW,+Marietta,+GA+30008"
+          target="_blank"
+          class="mt-6 inline-flex rounded-xl bg-red-600 px-5 py-3 font-semibold text-white transition hover:bg-red-700"
+        >
+          Get Directions
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-gray-800">
+    <div
+      class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-6 text-center text-sm text-gray-500 md:flex-row"
+    >
+      <p>
+        © 2025 Citigo. All rights reserved.
+      </p>
+
+      <p>
+        Serving Marietta, Georgia with quality fuel, food, and convenience.
+      </p>
+    </div>
+  </div>
+</footer>
     <script src="js/script.js"></script>
   </body>
 </html>

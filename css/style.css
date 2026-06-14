@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: smooth;
+}
+
 @keyframes loading {
   0% {
     width: 0%;
@@ -7,6 +11,61 @@
   }
   100% {
     width: 100%;
+  }
+}
+
+/* Logo Animation */
+.animate-logo {
+  animation: logoCycle 2.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes logoCycle {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  40% {
+    transform: rotate(360deg) scale(1.12);
+  }
+
+  55% {
+    transform: rotate(360deg) scale(1);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/* Ripples */
+.ripple {
+  opacity: 0;
+}
+
+.ripple-1 {
+  animation: ripple 2.5s ease-out infinite;
+  animation-delay: 1.3s;
+}
+
+.ripple-2 {
+  animation: ripple 2.5s ease-out infinite;
+  animation-delay: 1.55s;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
   }
 }
 /* ============================= */
@@ -270,4 +329,22 @@
 /* Your scaling logic for the active card */
 .testimonial-card.active {
   transform: scale(1.03);
+}
+
+
+
+/* =========== Footer ============== */
+.rotating-footer-logo{
+  animation: rotating 5s linear infinite;
+}
+@keyframes rotating {
+  0%{
+    transform: rotateY(0deg);
+  }
+  50%{
+    transform: rotateY(180deg);
+  }
+  100%{
+    transform: rotateY(360deg);
+  }
 }

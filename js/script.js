@@ -98,8 +98,6 @@ if (features.length) {
   featureObserver.observe(features[0]);
 }
 
-
-
 // =============== Fuel Counter =================
 
 const fuelCounters = document.querySelectorAll(".fuel-counter");
@@ -142,10 +140,6 @@ const fuelObserver = new IntersectionObserver(
 fuelCounters.forEach((counter) => {
   fuelObserver.observe(counter);
 });
-
-
-
-
 
 // ================ Testimonial ==============
 // document.addEventListener("DOMContentLoaded", () => {
@@ -212,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateSlider() {
     // Gap size matches Tailwind's 'gap-6' which defaults to 24px
-    const gap = 24; 
+    const gap = 24;
     const cardWidth = originalCards[0].offsetWidth + gap;
 
     // Direct movement transform
@@ -249,13 +243,13 @@ document.addEventListener("DOMContentLoaded", () => {
     current++;
     updateSlider();
 
-    // Loop Snapping: If we reach the cloned set, snap instantly back to index 0 
+    // Loop Snapping: If we reach the cloned set, snap instantly back to index 0
     if (current === totalOriginals) {
       isTransitioning = true;
-      
+
       // Wait exactly for the 700ms transition to finish before snapping
       setTimeout(() => {
-        slider.style.transition = "none"; 
+        slider.style.transition = "none";
         current = 0;
         slider.style.transform = `translateX(0px)`;
         isTransitioning = false;
@@ -271,4 +265,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Run initializer setup
   updateSlider();
+});
+
+// ============= FAQs Section =============
+document.addEventListener("DOMContentLoaded", () => {
+  const faqButtons = document.querySelectorAll(".faq-btn");
+
+  faqButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const content = button.nextElementSibling;
+      const icon = button.querySelector(".faq-icon");
+
+      const isOpen = content.style.maxHeight;
+
+      document.querySelectorAll(".faq-content").forEach((item) => {
+        item.style.maxHeight = null;
+      });
+
+      document.querySelectorAll(".faq-icon").forEach((item) => {
+        item.textContent = "+";
+      });
+
+      if (!isOpen) {
+        content.style.maxHeight = content.scrollHeight + "px";
+        icon.textContent = "−";
+      }
+    });
+  });
 });
