@@ -36,6 +36,129 @@
       </div>
     </div>
 
+    <!-- ============= Pop Up ============ -->
+     <!-- USER-FRIENDLY LIGHT-THEME POPUP MODAL (Hidden by default via 'hidden') -->
+<div id="saleModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+  
+  <!-- Backdrop Blur & Overlay (Soft, premium background dimming) -->
+  <div id="modalOverlay" class="absolute inset-0 bg-slate-900/40 backdrop-blur-md transition-opacity duration-500"></div>
+
+  <!-- Modal Content Box -->
+  <div class="relative w-full max-w-md overflow-hidden rounded-3xl bg-white p-1 text-center shadow-2xl border border-slate-100"
+       style="animation: modalEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;">
+    
+    <!-- Custom CSS Animations for Entrance and Attention-Grabbing Date -->
+    <style>
+      /* Modal Pop Entrance */
+      @keyframes modalEntrance {
+        from { opacity: 0; transform: scale(0.92) translateY(15px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
+      }
+
+      /* Zoom + Shake Attention Loop */
+      @keyframes zoomAndShake {
+        0%, 70%, 100% { transform: scale(1) rotate(0deg); }
+        75% { transform: scale(1.05) rotate(-2deg); }
+        80% { transform: scale(1.05) rotate(2deg); }
+        85% { transform: scale(1.05) rotate(-2deg); }
+        90% { transform: scale(1.05) rotate(2deg); }
+        95% { transform: scale(1.03) rotate(0deg); }
+      }
+
+      .attention-date-box {
+        animation: zoomAndShake 3.5s ease-in-out infinite;
+        will-change: transform;
+      }
+    </style>
+    
+    <!-- Decorative Premium Top Accent Accent -->
+    <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-400 via-orange-500 to-red-500"></div>
+
+    <!-- Inner Content Container -->
+    <div class="bg-white rounded-[20px] p-8 sm:p-10 flex flex-col items-center">
+      
+      <!-- Close Button (Enlarged and optimized for modern touch targets) -->
+      <button id="closeModalBtn" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-all p-2 rounded-full" aria-label="Close modal">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Clean Icon Layout with Soft Amber Ring -->
+      <div class="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-amber-50 text-amber-600 ring-8 ring-amber-50/50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      </div>
+
+      <!-- Friendly Badge Info -->
+      <span class="mb-3 inline-block rounded-full bg-orange-50 px-4 py-1 text-xs font-bold tracking-wide text-orange-700 uppercase">
+        Limited Time Offer
+      </span>
+
+      <!-- Heading with High Contrast Hierarchy -->
+      <h3 class="text-2xl font-black tracking-tight text-slate-900 sm:text-3xl">
+        Huge Savings on Fuel!
+      </h3>
+      
+      <!-- User-Friendly, Short & Clear Copy -->
+      <p class="mt-3 text-sm sm:text-base text-slate-600 max-w-xs leading-relaxed">
+        We've got an exclusive sale lined up. Fill up your tank for less before the offer runs out!
+      </p>
+
+      <!-- HIGH ATTENTION: ZOOMING AND SHAKING DATE CONTAINER -->
+      <div class="attention-date-box mt-6 w-full rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 p-4 shadow-xl shadow-orange-500/20 border border-orange-400">
+        <p class="text-xs font-extrabold uppercase tracking-widest text-amber-100 drop-shadow-sm">Mark the Dates</p>
+        <p class="mt-0.5 text-xl sm:text-2xl font-black text-white tracking-tight drop-shadow-sm">
+          July 3rd &mdash; July 5th
+        </p>
+      </div>
+
+      <!-- High-Conversion Primary Button -->
+      <button id="ctaModalBtn" class="mt-8 w-full rounded-2xl bg-slate-900 px-6 py-4 text-sm sm:text-base font-bold text-white shadow-xl shadow-slate-900/10 transition-all duration-200 hover:bg-slate-800 active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-slate-900/20">
+        Check it out
+      </button>
+      
+      <!-- Clean, Accessible Dismiss Link -->
+      <button id="dismissLink" class="mt-4 text-sm font-semibold text-slate-400 hover:text-slate-600 transition-colors">
+        Maybe later
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript First-Visit Guard Logic -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("saleModal");
+    const overlay = document.getElementById("modalOverlay");
+    const closeBtn = document.getElementById("closeModalBtn");
+    const ctaBtn = document.getElementById("ctaModalBtn");
+    const dismissLink = document.getElementById("dismissLink");
+
+    // Check if the user has already dismissed this modal in a past session
+    const hasVisited = localStorage.getItem("fuelSalePopupShown");
+
+    if (!hasVisited) {
+      setTimeout(() => {
+        modal.classList.remove("hidden");
+      }, 800); // Premium delay so it doesn't pop aggressively while assets load
+    }
+
+    // Single source function to close modal cleanly and save state
+    function closeModal() {
+      modal.classList.add("hidden");
+      localStorage.setItem("fuelSalePopupShown", "true");
+    }
+
+    // Dismiss Event Listeners
+    closeBtn.addEventListener("click", closeModal);
+    ctaBtn.addEventListener("click", closeModal);
+    dismissLink.addEventListener("click", closeModal);
+    overlay.addEventListener("click", closeModal);
+  });
+</script>
+
     <!-- ============= Navbar ============= -->
     <nav class="border-b border-gray-200 bg-white px-5">
       <div class="mx-auto flex h-20 items-center justify-between px-6">
@@ -783,21 +906,6 @@
             Stop by for fuel, snacks, hot food, drinks, and everyday essentials.
           </p>
         </div>
-
-
-            <svg
-              class="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
           </div>
         </div>
 
