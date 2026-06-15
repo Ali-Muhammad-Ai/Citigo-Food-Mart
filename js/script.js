@@ -293,3 +293,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
+
+// ========== popup ===========
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("saleModal");
+    const overlay = document.getElementById("modalOverlay");
+    const closeBtn = document.getElementById("closeModalBtn");
+    const ctaBtn = document.getElementById("ctaModalBtn");
+    const dismissLink = document.getElementById("dismissLink");
+
+    // Check if the user has already dismissed this modal in a past session
+    const hasVisited = localStorage.getItem("fuelSalePopupShown");
+
+    if (!hasVisited) {
+      setTimeout(() => {
+        modal.classList.remove("hidden");
+      }, 800); // Premium delay so it doesn't pop aggressively while assets load
+    }
+
+    // Single source function to close modal cleanly and save state
+    function closeModal() {
+      modal.classList.add("hidden");
+      localStorage.setItem("fuelSalePopupShown", "true");
+    }
+
+    // Dismiss Event Listeners
+    closeBtn.addEventListener("click", closeModal);
+    ctaBtn.addEventListener("click", closeModal);
+    dismissLink.addEventListener("click", closeModal);
+    overlay.addEventListener("click", closeModal);
+  });

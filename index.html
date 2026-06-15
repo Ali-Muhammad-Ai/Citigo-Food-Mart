@@ -47,30 +47,6 @@
   <div class="relative w-full max-w-md overflow-hidden rounded-3xl bg-white p-1 text-center shadow-2xl border border-slate-100"
        style="animation: modalEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;">
     
-    <!-- Custom CSS Animations for Entrance and Attention-Grabbing Date -->
-    <style>
-      /* Modal Pop Entrance */
-      @keyframes modalEntrance {
-        from { opacity: 0; transform: scale(0.92) translateY(15px); }
-        to { opacity: 1; transform: scale(1) translateY(0); }
-      }
-
-      /* Zoom + Shake Attention Loop */
-      @keyframes zoomAndShake {
-        0%, 70%, 100% { transform: scale(1) rotate(0deg); }
-        75% { transform: scale(1.05) rotate(-2deg); }
-        80% { transform: scale(1.05) rotate(2deg); }
-        85% { transform: scale(1.05) rotate(-2deg); }
-        90% { transform: scale(1.05) rotate(2deg); }
-        95% { transform: scale(1.03) rotate(0deg); }
-      }
-
-      .attention-date-box {
-        animation: zoomAndShake 3.5s ease-in-out infinite;
-        will-change: transform;
-      }
-    </style>
-    
     <!-- Decorative Premium Top Accent Accent -->
     <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-400 via-orange-500 to-red-500"></div>
 
@@ -92,12 +68,12 @@
       </div>
 
       <!-- Friendly Badge Info -->
-      <span class="mb-3 inline-block rounded-full bg-orange-50 px-4 py-1 text-xs font-bold tracking-wide text-orange-700 uppercase">
+      <span class="mb-3 inline-block rounded-full bg-orange-50 px-4 py-1 text-xs font-semibold tracking-wide text-orange-700 uppercase">
         Limited Time Offer
       </span>
 
       <!-- Heading with High Contrast Hierarchy -->
-      <h3 class="text-2xl font-black tracking-tight text-slate-900 sm:text-3xl">
+      <h3 class="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
         Huge Savings on Fuel!
       </h3>
       
@@ -108,8 +84,8 @@
 
       <!-- HIGH ATTENTION: ZOOMING AND SHAKING DATE CONTAINER -->
       <div class="attention-date-box mt-6 w-full rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 p-4 shadow-xl shadow-orange-500/20 border border-orange-400">
-        <p class="text-xs font-extrabold uppercase tracking-widest text-amber-100 drop-shadow-sm">Mark the Dates</p>
-        <p class="mt-0.5 text-xl sm:text-2xl font-black text-white tracking-tight drop-shadow-sm">
+        <p class="text-xs font-semibold uppercase tracking-widest text-amber-100 drop-shadow-sm">Mark the Dates</p>
+        <p class="mt-0.5 text-xl sm:text-2xl font-semibold text-white tracking-tight drop-shadow-sm">
           July 3rd &mdash; July 5th
         </p>
       </div>
@@ -127,37 +103,6 @@
   </div>
 </div>
 
-<!-- JavaScript First-Visit Guard Logic -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const modal = document.getElementById("saleModal");
-    const overlay = document.getElementById("modalOverlay");
-    const closeBtn = document.getElementById("closeModalBtn");
-    const ctaBtn = document.getElementById("ctaModalBtn");
-    const dismissLink = document.getElementById("dismissLink");
-
-    // Check if the user has already dismissed this modal in a past session
-    const hasVisited = localStorage.getItem("fuelSalePopupShown");
-
-    if (!hasVisited) {
-      setTimeout(() => {
-        modal.classList.remove("hidden");
-      }, 800); // Premium delay so it doesn't pop aggressively while assets load
-    }
-
-    // Single source function to close modal cleanly and save state
-    function closeModal() {
-      modal.classList.add("hidden");
-      localStorage.setItem("fuelSalePopupShown", "true");
-    }
-
-    // Dismiss Event Listeners
-    closeBtn.addEventListener("click", closeModal);
-    ctaBtn.addEventListener("click", closeModal);
-    dismissLink.addEventListener("click", closeModal);
-    overlay.addEventListener("click", closeModal);
-  });
-</script>
 
     <!-- ============= Navbar ============= -->
     <nav class="border-b border-gray-200 bg-white px-5">

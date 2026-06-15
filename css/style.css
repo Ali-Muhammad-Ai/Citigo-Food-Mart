@@ -348,3 +348,23 @@ html{
     transform: rotateY(360deg);
   }
 }
+/* Modal Pop Entrance */
+      @keyframes modalEntrance {
+        from { opacity: 0; transform: scale(0.92) translateY(15px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
+      }
+
+      /* Zoom + Shake Attention Loop */
+      @keyframes zoomAndShake {
+        0%, 70%, 100% { transform: scale(1) rotate(0deg); }
+        75% { transform: scale(1.05) rotate(-2deg); }
+        80% { transform: scale(1.05) rotate(2deg); }
+        85% { transform: scale(1.05) rotate(-2deg); }
+        90% { transform: scale(1.05) rotate(2deg); }
+        95% { transform: scale(1.03) rotate(0deg); }
+      }
+
+      .attention-date-box {
+        animation: zoomAndShake 3.5s ease-in-out infinite;
+        will-change: transform;
+      }
